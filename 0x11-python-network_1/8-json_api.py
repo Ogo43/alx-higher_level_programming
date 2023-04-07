@@ -8,7 +8,7 @@ import sys
 import requests
 
 
-if __username__ == "__main__":
+if __name__ == "__main__":
     letter = "" if len(sys.argv) == 1 else sys.argv[1]
     payload = {"q": letter}
 
@@ -18,6 +18,6 @@ if __username__ == "__main__":
         if response == {}:
             print("No result")
         else:
-            print("[{}] {}".format(response.get("id"), response.get("username")))
+            print("[{}] {}".format(response.get("id"), response.get("name")))
     except ValueError:
         print("Not a valid JSON")
